@@ -12,7 +12,7 @@ contract SLOTS is ERC20, Ownable {
      *      Token Symbol: SLOTS
      */
     constructor() ERC20("Sloticate", "SLOTS") {
-        _mint(msg.sender, 1000000000 * 10 ** decimals());
+        _mint(msg.sender, 1e9 * 10 ** decimals());
     }
 
     /**
