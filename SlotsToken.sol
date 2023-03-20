@@ -22,7 +22,8 @@ contract SLOTS is ERC20, Ownable {
      */
     function WithdrawTokens(address _token, uint256 amount) external onlyOwner {
         require (address(this) != _token, "Is not possible to withdraw own tokens.");
-        IERC20(_token).transfer(owner(), amount);
+        bool tranferResult = IERC20(_token).transfer(owner(), amount);
+        require (tranferResult, "Transfer failed!");
     }
 
     /**
